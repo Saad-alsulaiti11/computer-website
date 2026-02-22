@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Computer Components & Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f6f8;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #1f4e79;
+        }
+        h2 {
+            color: #2e75b6;
+            margin-top: 30px;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #2e75b6;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1f4e79;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Computer System Explanation & Quiz</h1>
+
+<div class="section">
+<h2>Example of Components of a Computer</h2>
+<p>
+A computer consists of several key components that work together to perform tasks. 
+The processor, which is the CPU, acts as the brain of the computer, executing instructions 
+and controlling all operations. Memory, which is the RAM, temporarily stores data and 
+program instructions that the CPU needs while the computer is running. Storage devices 
+store data permanently. Input devices allow users to enter data, and output devices display results. 
+All components are connected through the motherboard.
+</p>
+</div>
+
+<div class="section">
+<h2>How are these components connected?</h2>
+<p>
+All computer components are connected by the motherboard, which acts as the backbone of the computer. 
+Components communicate through pathways called buses, and the motherboard distributes power to them.
+</p>
+</div>
+
+<div class="section">
+<h2>How is data accessed from memory?</h2>
+<p>
+The CPU sends the memory address through the address bus and a read signal through the control bus. 
+The memory sends data back through the data bus. To write data, the CPU sends the address, the data, 
+and a write signal, and the memory stores it.
+</p>
+</div>
+
+<div class="section">
+<h2>How are programs executed?</h2>
+<p>
+Programs run using the fetch-decode-execute cycle. The CPU fetches an instruction, decodes it, 
+and executes it. This process repeats continuously at high speed.
+</p>
+</div>
+
+<div class="section">
+<h2>Quiz</h2>
+
+<h3>Multiple Choice Questions</h3>
+
+<p>1. What is the brain of the computer?</p>
+<input type="radio" name="q1" value="0"> RAM<br>
+<input type="radio" name="q1" value="1"> CPU<br>
+<input type="radio" name="q1" value="0"> Monitor<br>
+
+<p>2. Which memory stores data permanently?</p>
+<input type="radio" name="q2" value="1"> Hard Drive / SSD<br>
+<input type="radio" name="q2" value="0"> RAM<br>
+<input type="radio" name="q2" value="0"> CPU<br>
+
+<p>3. Which bus carries memory addresses?</p>
+<input type="radio" name="q3" value="1"> Address Bus<br>
+<input type="radio" name="q3" value="0"> Data Bus<br>
+<input type="radio" name="q3" value="0"> Control Bus<br>
+
+<p>4. What cycle is used to execute programs?</p>
+<input type="radio" name="q4" value="1"> Fetch-Decode-Execute<br>
+<input type="radio" name="q4" value="0"> Input-Process-Output<br>
+<input type="radio" name="q4" value="0"> Read-Write-Store<br>
+
+<p>5. Which device is an input device?</p>
+<input type="radio" name="q5" value="1"> Keyboard<br>
+<input type="radio" name="q5" value="0"> Monitor<br>
+<input type="radio" name="q5" value="0"> Speaker<br>
+
+<h3>True / False Questions</h3>
+
+<p>6. RAM stores data permanently.</p>
+<input type="radio" name="q6" value="0"> True<br>
+<input type="radio" name="q6" value="1"> False<br>
+
+<p>7. The motherboard connects all components.</p>
+<input type="radio" name="q7" value="1"> True<br>
+<input type="radio" name="q7" value="0"> False<br>
+
+<p>8. The CPU sends read and write signals.</p>
+<input type="radio" name="q8" value="1"> True<br>
+<input type="radio" name="q8" value="0"> False<br>
+
+<p>9. Programs are executed only once.</p>
+<input type="radio" name="q9" value="0"> True<br>
+<input type="radio" name="q9" value="1"> False<br>
+
+<p>10. The data bus carries data.</p>
+<input type="radio" name="q10" value="1"> True<br>
+<input type="radio" name="q10" value="0"> False<br>
+
+<br>
+<button onclick="checkScore()">Submit Quiz</button>
+<p class="result" id="result"></p>
+
+</div>
+
+<script>
+function checkScore() {
+    let score = 0;
+    for (let i = 1; i <= 10; i++) {
+        let answers = document.getElementsByName("q" + i);
+        for (let answer of answers) {
+            if (answer.checked) {
+                score += parseInt(answer.value);
+            }
+        }
+    }
+    document.getElementById("result").innerHTML = "Your Score: " + score + " / 10";
+}
+</script>
+
+</body>
+</html>
