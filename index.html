@@ -1,156 +1,184 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Computer Components & Quiz</title>
+    <title>Computer Components Interactive Quiz</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f4f6f8;
-            line-height: 1.6;
+            background: linear-gradient(to right, #4e73df, #1cc88a);
+            padding: 20px;
+            color: #333;
         }
+
         h1 {
-            color: #1f4e79;
+            text-align: center;
+            color: white;
         }
-        h2 {
-            color: #2e75b6;
-            margin-top: 30px;
-        }
-        .section {
+
+        .container {
+            max-width: 800px;
+            margin: auto;
             background: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .question {
             margin-bottom: 20px;
         }
+
+        .question p {
+            font-weight: bold;
+        }
+
         button {
-            padding: 10px 20px;
-            background-color: #2e75b6;
+            padding: 12px 20px;
+            background-color: #4e73df;
             color: white;
             border: none;
-            border-radius: 5px;
+            border-radius: 6px;
             cursor: pointer;
+            font-size: 16px;
         }
+
         button:hover {
-            background-color: #1f4e79;
+            background-color: #2e59d9;
         }
-        .result {
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
             font-weight: bold;
-            margin-top: 15px;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .wrong {
+            color: red;
         }
     </style>
 </head>
 <body>
 
-<h1>Computer System Explanation & Quiz</h1>
+<h1>Computer Components Quiz</h1>
 
-<div class="section">
-<h2>Example of Components of a Computer</h2>
-<p>
-A computer consists of several key components that work together to perform tasks. 
-The processor, which is the CPU, acts as the brain of the computer, executing instructions 
-and controlling all operations. Memory, which is the RAM, temporarily stores data and 
-program instructions that the CPU needs while the computer is running. Storage devices 
-store data permanently. Input devices allow users to enter data, and output devices display results. 
-All components are connected through the motherboard.
-</p>
+<div class="container">
+<form id="quizForm">
+
+<div class="question">
+<p>1. What is the main function of the CPU?</p>
+<input type="radio" name="q1" value="a"> Store files<br>
+<input type="radio" name="q1" value="b"> Execute instructions<br>
+<input type="radio" name="q1" value="c"> Display images<br>
 </div>
 
-<div class="section">
-<h2>How are these components connected?</h2>
-<p>
-All computer components are connected by the motherboard, which acts as the backbone of the computer. 
-Components communicate through pathways called buses, and the motherboard distributes power to them.
-</p>
+<div class="question">
+<p>2. RAM is used for:</p>
+<input type="radio" name="q2" value="a"> Permanent storage<br>
+<input type="radio" name="q2" value="b"> Temporary storage<br>
+<input type="radio" name="q2" value="c"> Cooling the system<br>
 </div>
 
-<div class="section">
-<h2>How is data accessed from memory?</h2>
-<p>
-The CPU sends the memory address through the address bus and a read signal through the control bus. 
-The memory sends data back through the data bus. To write data, the CPU sends the address, the data, 
-and a write signal, and the memory stores it.
-</p>
+<div class="question">
+<p>3. Which component connects all parts together?</p>
+<input type="radio" name="q3" value="a"> Motherboard<br>
+<input type="radio" name="q3" value="b"> Monitor<br>
+<input type="radio" name="q3" value="c"> Speaker<br>
 </div>
 
-<div class="section">
-<h2>How are programs executed?</h2>
-<p>
-Programs run using the fetch-decode-execute cycle. The CPU fetches an instruction, decodes it, 
-and executes it. This process repeats continuously at high speed.
-</p>
+<div class="question">
+<p>4. The fetch-decode-execute cycle is used to:</p>
+<input type="radio" name="q4" value="a"> Clean the computer<br>
+<input type="radio" name="q4" value="b"> Run programs<br>
+<input type="radio" name="q4" value="c"> Install hardware<br>
 </div>
 
-<div class="section">
-<h2>Quiz</h2>
+<div class="question">
+<p>5. The data bus transfers:</p>
+<input type="radio" name="q5" value="a"> Electricity<br>
+<input type="radio" name="q5" value="b"> Data<br>
+<input type="radio" name="q5" value="c"> Sound<br>
+</div>
 
-<h3>Multiple Choice Questions</h3>
+<div class="question">
+<p>6. RAM stores data permanently. (True/False)</p>
+<input type="radio" name="q6" value="true"> True<br>
+<input type="radio" name="q6" value="false"> False<br>
+</div>
 
-<p>1. What is the brain of the computer?</p>
-<input type="radio" name="q1" value="0"> RAM<br>
-<input type="radio" name="q1" value="1"> CPU<br>
-<input type="radio" name="q1" value="0"> Monitor<br>
+<div class="question">
+<p>7. The motherboard connects all components. (True/False)</p>
+<input type="radio" name="q7" value="true"> True<br>
+<input type="radio" name="q7" value="false"> False<br>
+</div>
 
-<p>2. Which memory stores data permanently?</p>
-<input type="radio" name="q2" value="1"> Hard Drive / SSD<br>
-<input type="radio" name="q2" value="0"> RAM<br>
-<input type="radio" name="q2" value="0"> CPU<br>
+<div class="question">
+<p>8. The CPU sends a read signal to get data. (True/False)</p>
+<input type="radio" name="q8" value="true"> True<br>
+<input type="radio" name="q8" value="false"> False<br>
+</div>
 
-<p>3. Which bus carries memory addresses?</p>
-<input type="radio" name="q3" value="1"> Address Bus<br>
-<input type="radio" name="q3" value="0"> Data Bus<br>
-<input type="radio" name="q3" value="0"> Control Bus<br>
+<div class="question">
+<p>9. Input devices display results. (True/False)</p>
+<input type="radio" name="q9" value="true"> True<br>
+<input type="radio" name="q9" value="false"> False<br>
+</div>
 
-<p>4. What cycle is used to execute programs?</p>
-<input type="radio" name="q4" value="1"> Fetch-Decode-Execute<br>
-<input type="radio" name="q4" value="0"> Input-Process-Output<br>
-<input type="radio" name="q4" value="0"> Read-Write-Store<br>
+<div class="question">
+<p>10. Storage devices keep data permanently. (True/False)</p>
+<input type="radio" name="q10" value="true"> True<br>
+<input type="radio" name="q10" value="false"> False<br>
+</div>
 
-<p>5. Which device is an input device?</p>
-<input type="radio" name="q5" value="1"> Keyboard<br>
-<input type="radio" name="q5" value="0"> Monitor<br>
-<input type="radio" name="q5" value="0"> Speaker<br>
+<button type="button" onclick="checkAnswers()">Submit Quiz</button>
 
-<h3>True / False Questions</h3>
+</form>
 
-<p>6. RAM stores data permanently.</p>
-<input type="radio" name="q6" value="0"> True<br>
-<input type="radio" name="q6" value="1"> False<br>
-
-<p>7. The motherboard connects all components.</p>
-<input type="radio" name="q7" value="1"> True<br>
-<input type="radio" name="q7" value="0"> False<br>
-
-<p>8. The CPU sends read and write signals.</p>
-<input type="radio" name="q8" value="1"> True<br>
-<input type="radio" name="q8" value="0"> False<br>
-
-<p>9. Programs are executed only once.</p>
-<input type="radio" name="q9" value="0"> True<br>
-<input type="radio" name="q9" value="1"> False<br>
-
-<p>10. The data bus carries data.</p>
-<input type="radio" name="q10" value="1"> True<br>
-<input type="radio" name="q10" value="0"> False<br>
-
-<br>
-<button onclick="checkScore()">Submit Quiz</button>
-<p class="result" id="result"></p>
-
+<div id="result"></div>
 </div>
 
 <script>
-function checkScore() {
+function checkAnswers() {
+    let correctAnswers = {
+        q1: "b",
+        q2: "b",
+        q3: "a",
+        q4: "b",
+        q5: "b",
+        q6: "false",
+        q7: "true",
+        q8: "true",
+        q9: "false",
+        q10: "true"
+    };
+
     let score = 0;
-    for (let i = 1; i <= 10; i++) {
-        let answers = document.getElementsByName("q" + i);
-        for (let answer of answers) {
-            if (answer.checked) {
-                score += parseInt(answer.value);
+
+    for (let key in correctAnswers) {
+        let selected = document.querySelector('input[name="' + key + '"]:checked');
+        if (selected) {
+            if (selected.value === correctAnswers[key]) {
+                score++;
             }
         }
     }
-    document.getElementById("result").innerHTML = "Your Score: " + score + " / 10";
+
+    let percentage = (score / 10) * 100;
+    let message = "";
+
+    if (percentage === 100) {
+        message = "Excellent! Perfect score!";
+    } else if (percentage >= 70) {
+        message = "Good job! You understand the topic well.";
+    } else {
+        message = "Keep reviewing and try again!";
+    }
+
+    document.getElementById("result").innerHTML =
+        "Your Score: " + score + "/10 (" + percentage + "%)<br><br>" + message;
 }
 </script>
 
