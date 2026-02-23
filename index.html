@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Computer Components Interactive Quiz</title>
+    <title>Computer Components Interactive Page</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -10,7 +10,7 @@
             color: #333;
         }
 
-        h1, h2 {
+        h1 {
             text-align: center;
             color: white;
         }
@@ -25,10 +25,32 @@
         }
 
         .section {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
-        p {
+        .section button {
+            width: 100%;
+            text-align: left;
+            padding: 15px;
+            font-size: 18px;
+            background-color: #4e73df;
+            color: white;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .section button:hover {
+            background-color: #2e59d9;
+        }
+
+        .section-content {
+            display: none;
+            padding: 15px;
+            background-color: #f9f9f9;
             line-height: 1.6;
         }
 
@@ -40,9 +62,9 @@
             font-weight: bold;
         }
 
-        button {
+        button.submit-btn {
             padding: 12px 20px;
-            background-color: #4e73df;
+            background-color: #1cc88a;
             color: white;
             border: none;
             border-radius: 6px;
@@ -50,22 +72,14 @@
             font-size: 16px;
         }
 
-        button:hover {
-            background-color: #2e59d9;
+        button.submit-btn:hover {
+            background-color: #17a673;
         }
 
         #result {
             margin-top: 20px;
             font-size: 18px;
             font-weight: bold;
-        }
-
-        .correct {
-            color: green;
-        }
-
-        .wrong {
-            color: red;
         }
     </style>
 </head>
@@ -75,106 +89,121 @@
 
 <div class="container">
 
-    <!-- Educational Content Section -->
+    <!-- Interactive Sections -->
     <div class="section">
-        <h2>Example of Components of a Computer</h2>
-        <p>A computer consists of several key components that work together to perform tasks. The processor, which is the CPU, acts as the brain of the computer, executing instructions and controlling all operations. Memory, which is the RAM, temporarily stores data and program instructions that the CPU needs while the computer is running, allowing quick access to information. Storage devices, such as hard drives or solid-state drives, store data permanently, including the operating system and user files. Input devices like the keyboard and mouse allow users to enter data, while output devices such as the monitor display results. All these components are connected through the motherboard, which enables communication between them.</p>
+        <button onclick="toggleSection(this)">Example of Components of a Computer</button>
+        <div class="section-content">
+            <p>A computer consists of several key components that work together to perform tasks. The processor, which is the CPU, acts as the brain of the computer, executing instructions and controlling all operations. Memory, which is the RAM, temporarily stores data and program instructions that the CPU needs while the computer is running, allowing quick access to information. Storage devices, such as hard drives or solid-state drives, store data permanently, including the operating system and user files. Input devices like the keyboard and mouse allow users to enter data, while output devices such as the monitor display results. All these components are connected through the motherboard, which enables communication between them.</p>
+        </div>
     </div>
 
     <div class="section">
-        <h2>How are these components connected?</h2>
-        <p>All of the computer components are connected by the motherboard, which acts as a backbone of a computer. The motherboard connects all important components like the CPU and RAM, and it helps distribute power. All the components are connected by the motherboard communication pathways called buses. The power supplied by the motherboard allows the components to be connected and send data to each other, which then allows all components to function as they should.</p>
+        <button onclick="toggleSection(this)">How are Components Connected?</button>
+        <div class="section-content">
+            <p>All of the computer components are connected by the motherboard, which acts as a backbone of a computer. The motherboard connects all important components like the CPU and RAM, and it helps distribute power. All the components are connected by the motherboard communication pathways called buses. The power supplied by the motherboard allows the components to be connected and send data to each other, which then allows all components to function as they should.</p>
+        </div>
     </div>
 
     <div class="section">
-        <h2>How is data accessed from memory? How are the contents copied to memory?</h2>
-        <p>Data is accessed from memory when the CPU sends the address of the required data through the address bus and sends a read signal through the control bus. The memory then finds the data stored at that address and sends it back to the CPU through the data bus. When copying data to memory, the CPU sends the memory address where the data should be stored, transfers the data through the data bus, and sends a write signal through the control bus. The memory then stores the data at the specified location.</p>
+        <button onclick="toggleSection(this)">How is Data Accessed from Memory?</button>
+        <div class="section-content">
+            <p>Data is accessed from memory when the CPU sends the address of the required data through the address bus and sends a read signal through the control bus. The memory then finds the data stored at that address and sends it back to the CPU through the data bus. When copying data to memory, the CPU sends the memory address where the data should be stored, transfers the data through the data bus, and sends a write signal through the control bus. The memory then stores the data at the specified location.</p>
+        </div>
     </div>
 
     <div class="section">
-        <h2>How are programs executed?</h2>
-        <p>Programs are executed through a process called the fetch-decode-execute cycle. First, the CPU fetches an instruction to determine what action is required. Next, it decodes the instruction to understand what needs to be done. Finally, it executes the instruction, which may involve performing calculations, moving data, or controlling other components. This cycle repeats continuously at a high speed, allowing the computer to run programs efficiently.</p>
+        <button onclick="toggleSection(this)">How are Programs Executed?</button>
+        <div class="section-content">
+            <p>Programs are executed through a process called the fetch-decode-execute cycle. First, the CPU fetches an instruction to determine what action is required. Next, it decodes the instruction to understand what needs to be done. Finally, it executes the instruction, which may involve performing calculations, moving data, or controlling other components. This cycle repeats continuously at a high speed, allowing the computer to run programs efficiently.</p>
+        </div>
     </div>
 
     <!-- Quiz Section -->
     <div class="section">
-        <h2>Computer Components Quiz</h2>
-        <form id="quizForm">
+        <button onclick="toggleSection(this)">Computer Components Quiz</button>
+        <div class="section-content">
+            <form id="quizForm">
 
-            <div class="question">
-                <p>1. What is the main function of the CPU?</p>
-                <input type="radio" name="q1" value="a"> Store files<br>
-                <input type="radio" name="q1" value="b"> Execute instructions<br>
-                <input type="radio" name="q1" value="c"> Display images<br>
-            </div>
+                <div class="question">
+                    <p>1. What is the main function of the CPU?</p>
+                    <input type="radio" name="q1" value="a"> Store files<br>
+                    <input type="radio" name="q1" value="b"> Execute instructions<br>
+                    <input type="radio" name="q1" value="c"> Display images<br>
+                </div>
 
-            <div class="question">
-                <p>2. RAM is used for:</p>
-                <input type="radio" name="q2" value="a"> Permanent storage<br>
-                <input type="radio" name="q2" value="b"> Temporary storage<br>
-                <input type="radio" name="q2" value="c"> Cooling the system<br>
-            </div>
+                <div class="question">
+                    <p>2. RAM is used for:</p>
+                    <input type="radio" name="q2" value="a"> Permanent storage<br>
+                    <input type="radio" name="q2" value="b"> Temporary storage<br>
+                    <input type="radio" name="q2" value="c"> Cooling the system<br>
+                </div>
 
-            <div class="question">
-                <p>3. Which component connects all parts together?</p>
-                <input type="radio" name="q3" value="a"> Motherboard<br>
-                <input type="radio" name="q3" value="b"> Monitor<br>
-                <input type="radio" name="q3" value="c"> Speaker<br>
-            </div>
+                <div class="question">
+                    <p>3. Which component connects all parts together?</p>
+                    <input type="radio" name="q3" value="a"> Motherboard<br>
+                    <input type="radio" name="q3" value="b"> Monitor<br>
+                    <input type="radio" name="q3" value="c"> Speaker<br>
+                </div>
 
-            <div class="question">
-                <p>4. The fetch-decode-execute cycle is used to:</p>
-                <input type="radio" name="q4" value="a"> Clean the computer<br>
-                <input type="radio" name="q4" value="b"> Run programs<br>
-                <input type="radio" name="q4" value="c"> Install hardware<br>
-            </div>
+                <div class="question">
+                    <p>4. The fetch-decode-execute cycle is used to:</p>
+                    <input type="radio" name="q4" value="a"> Clean the computer<br>
+                    <input type="radio" name="q4" value="b"> Run programs<br>
+                    <input type="radio" name="q4" value="c"> Install hardware<br>
+                </div>
 
-            <div class="question">
-                <p>5. The data bus transfers:</p>
-                <input type="radio" name="q5" value="a"> Electricity<br>
-                <input type="radio" name="q5" value="b"> Data<br>
-                <input type="radio" name="q5" value="c"> Sound<br>
-            </div>
+                <div class="question">
+                    <p>5. The data bus transfers:</p>
+                    <input type="radio" name="q5" value="a"> Electricity<br>
+                    <input type="radio" name="q5" value="b"> Data<br>
+                    <input type="radio" name="q5" value="c"> Sound<br>
+                </div>
 
-            <div class="question">
-                <p>6. RAM stores data permanently. (True/False)</p>
-                <input type="radio" name="q6" value="true"> True<br>
-                <input type="radio" name="q6" value="false"> False<br>
-            </div>
+                <div class="question">
+                    <p>6. RAM stores data permanently. (True/False)</p>
+                    <input type="radio" name="q6" value="true"> True<br>
+                    <input type="radio" name="q6" value="false"> False<br>
+                </div>
 
-            <div class="question">
-                <p>7. The motherboard connects all components. (True/False)</p>
-                <input type="radio" name="q7" value="true"> True<br>
-                <input type="radio" name="q7" value="false"> False<br>
-            </div>
+                <div class="question">
+                    <p>7. The motherboard connects all components. (True/False)</p>
+                    <input type="radio" name="q7" value="true"> True<br>
+                    <input type="radio" name="q7" value="false"> False<br>
+                </div>
 
-            <div class="question">
-                <p>8. The CPU sends a read signal to get data. (True/False)</p>
-                <input type="radio" name="q8" value="true"> True<br>
-                <input type="radio" name="q8" value="false"> False<br>
-            </div>
+                <div class="question">
+                    <p>8. The CPU sends a read signal to get data. (True/False)</p>
+                    <input type="radio" name="q8" value="true"> True<br>
+                    <input type="radio" name="q8" value="false"> False<br>
+                </div>
 
-            <div class="question">
-                <p>9. Input devices display results. (True/False)</p>
-                <input type="radio" name="q9" value="true"> True<br>
-                <input type="radio" name="q9" value="false"> False<br>
-            </div>
+                <div class="question">
+                    <p>9. Input devices display results. (True/False)</p>
+                    <input type="radio" name="q9" value="true"> True<br>
+                    <input type="radio" name="q9" value="false"> False<br>
+                </div>
 
-            <div class="question">
-                <p>10. Storage devices keep data permanently. (True/False)</p>
-                <input type="radio" name="q10" value="true"> True<br>
-                <input type="radio" name="q10" value="false"> False<br>
-            </div>
+                <div class="question">
+                    <p>10. Storage devices keep data permanently. (True/False)</p>
+                    <input type="radio" name="q10" value="true"> True<br>
+                    <input type="radio" name="q10" value="false"> False<br>
+                </div>
 
-            <button type="button" onclick="checkAnswers()">Submit Quiz</button>
+                <button type="button" class="submit-btn" onclick="checkAnswers()">Submit Quiz</button>
+            </form>
 
-        </form>
-
-        <div id="result"></div>
+            <div id="result"></div>
+        </div>
     </div>
+
 </div>
 
 <script>
+function toggleSection(button) {
+    const content = button.nextElementSibling;
+    content.style.display = (content.style.display === "block") ? "none" : "block";
+}
+
 function checkAnswers() {
     let correctAnswers = {
         q1: "b",
